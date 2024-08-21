@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Salon - Your Premium Hair Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-diamond">
+            <i class="fas fa-gem"></i>
+        </div>
+        <p class="loading-text">Loading...</p>
+    </div>
+    
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Luxe Salon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section text-center text-white">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1 class="display-4">Experience Luxury & Style</h1>
+                <p class="lead">Where elegance meets expertise.</p>
+                <a href="#contact" class="btn btn-primary btn-lg">Book Your Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <div class="container text-center">
+            <h2>About Luxe Salon</h2>
+            <p>Welcome to Luxe Salon, where we combine elegance, expertise, and luxury to create an unforgettable hair experience. Our salon offers a sanctuary for clients seeking personalized service and outstanding results.</p>
+        </div>
+    </section>
+
+   <!-- Our Creations Section -->
+<section id="our-creations" class="our-creations-section">
+    <div class="container">
+        <h2 data-aos="fade-up">Our Exquisite Creations</h2>
+        <p class="section-description" data-aos="fade-up" data-aos-delay="100">Explore the artistry behind every look we create. Our salon delivers exceptional craftsmanship and attention to detail.</p>
+        
+        <div class="row gallery-row">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Creation 1">
+                    <div class="overlay">
+                        <h4>Elegant Updo</h4>
+                        <p>Perfect for weddings and formal events.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Creation 2">
+                    <div class="overlay">
+                        <h4>Chic Bob</h4>
+                        <p>A timeless style for modern women.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Creation 3">
+                    <div class="overlay">
+                        <h4>Classic Waves</h4>
+                        <p>Sophisticated curls for any occasion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button id="toggleGalleryButton" onclick="toggleGallery()">View More Creations</button>
+        </div>
+    </div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+        <h2 class="text-center" data-aos="fade-up">Our Creations</h2>
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Gallery Image 1" onclick="openModal(0)">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Gallery Image 2" onclick="openModal(1)">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/600x400" class="img-fluid rounded" alt="Gallery Image 3" onclick="openModal(2)">
+            </div>
+            <!-- Add more gallery items here -->
+        </div>
+        <div class="text-center mt-4">
+            <button id="toggleGalleryButton" class="btn btn-secondary" onclick="toggleGallery()">View More</button>
+        </div>
+    </div>
+
+    <!-- Modal for full-size images -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Team Section -->
+<section id="team" class="content-section">
+    <div class="container">
+        <h2 class="text-center">Meet Our Stylists</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="team-member text-center">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Stylist 1">
+                    <h4>Jane Doe</h4>
+                    <p>Master Stylist</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member text-center">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Stylist 2">
+                    <h4>John Smith</h4>
+                    <p>Senior Barber</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member text-center">
+                    <img src="https://via.placeholder.com/150" class="rounded-circle mb-3" alt="Stylist 3">
+                    <h4>Emily Brown</h4>
+                    <p>Color Specialist</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section bg-light">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h4>Visit Us</h4>
+                    <p>123 Luxury Ave, Paris, France</p>
+                    <h4>Call Us</h4>
+                    <p>+33 1 23 45 67 89</p>
+                    <h4>Email Us</h4>
+                    <p>info@luxesalon.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-4">
+        <p>&copy; 2024 Luxe Salon. All rights reserved.</p>
+        <p>Designed by <a href="https://github.com/yvan-dz" target="_blank">Yvan Dzefak</a></p>
+    </footer>
+
+    <!-- Bootstrap JS, AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 3000); // Délai de 3 secondes (3000 millisecondes)
+    });
+
+
+        // Additional JavaScript for interactivity (like gallery modal, etc.)
+        // Modal Script
+function openModal(index) {
+    // Function to open the modal and show the clicked image
+}
+
+function closeModal() {
+    // Function to close the modal
+}
+
+function changeSlide(n) {
+    // Function to navigate to the next/previous slide
+}
+
+// Additional JavaScript to handle gallery grid
+function toggleGallery() {
+    // Function to show/hide the full gallery
+}
+
+    </script>
+</body>
+</html>
